@@ -1,12 +1,12 @@
-# AI Studio end-to-end baseline reference implementation
+# AI Foundry end-to-end baseline reference implementation
 
-This reference implementation based on our [Baseline OpenAI end-to-end chat reference architecture](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/baseline-openai-e2e-chat) demonstrates how to author and run various AI-driven applications, including chat applications, using Azure AI Studio and OpenAI within a single region. It offers a secure and private environment suitable for enterprises, with options for deploying the application:
+This reference implementation based on our [Baseline OpenAI end-to-end chat reference architecture](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/baseline-openai-e2e-chat) demonstrates how to author and run various AI-driven applications, including chat applications, using Azure AI Foundry and OpenAI within a single region. It offers a secure and private environment suitable for enterprises, with options for deploying the application:
 
-- An Azure AI Studio-managed online endpoint in a managed virtual network.
+- An Azure AI Foundry-managed online endpoint in a managed virtual network.
   - For applications demanding high availability, deploying multiple online endpoints behind a load balancer to enhance resiliency is advisable.
 - A network-isolated, zone-redundant, highly available deployment using Azure App Service.
 
-Leveraging the scalable features of [Promptflow](https://microsoft.github.io/promptflow/) within [Azure AI Studio](https://azure.microsoft.com/services/ai-studio/), the architecture supports the creation and deployment of robust AI workflows, including:
+Leveraging the scalable features of [Promptflow](https://microsoft.github.io/promptflow/) within [Azure AI Foundry](https://azure.microsoft.com/services/ai-studio/), the architecture supports the creation and deployment of robust AI workflows, including:
 
 - Prompt composition
 - Data querying for contextual grounding
@@ -21,13 +21,13 @@ The implementation seeks to meet enterprise requirements concerning:
 
 ## Reference Architecture
 
-![Diagram of the authoring architecture using Azure AI Studio.](docs/media/ai-studio-authoring.png)
+![Diagram of the authoring architecture using Azure AI Foundry.](docs/media/ai-studio-authoring.png)
 
 The implementation covers the following scenarios:
 
-1. Testing/Authoring using AI Studio Chat Playground
-2. Authoring a flow - Authoring a flow using prompt flow in an Azure AI Studio
-3. Deploying a flow to Azure AI Studio (AML hosted option) - The deployment of an executable flow to an Azure AI Studio online endpoint. The client UI that is hosted in Azure App Service accesses the deployed flow.
+1. Testing/Authoring using AI Foundry Chat Playground
+2. Authoring a flow - Authoring a flow using prompt flow in an Azure AI Foundry
+3. Deploying a flow to Azure AI Foundry (AML hosted option) - The deployment of an executable flow to an Azure AI Foundry online endpoint. The client UI that is hosted in Azure App Service accesses the deployed flow.
 4. Deploying a flow to Azure App Service (Self-hosted option) - The deployment of an executable flow as a container to Azure App Service. The client UI that accesses the flow is also hosted in Azure App Service.
 
 ## Deployment
@@ -196,7 +196,7 @@ Make sure that after deployment you go to your AI Search resource and approve th
 
 ## Project Playground
 
-AI Studio Project Playground serves as a streamlined arena where users can interact with different AI technologies. The platform offers a Chat Playground where you can test conversational features of Azure OpenAI and chat with your own data. In addition, the Assistants section allows using file search, code interpreter for sandboxed code generation and execution, and functions. The platform also includes a feature for creating Images, as well as a section devoted to generating Completions, helping to round out creative or complex texts. Overall, this playground is a one-stop shop for crafting, assessing, and perfecting your AI-driven projects.
+AI Foundry Project Playground serves as a streamlined arena where users can interact with different AI technologies. The platform offers a Chat Playground where you can test conversational features of Azure OpenAI and chat with your own data. In addition, the Assistants section allows using file search, code interpreter for sandboxed code generation and execution, and functions. The platform also includes a feature for creating Images, as well as a section devoted to generating Completions, helping to round out creative or complex texts. Overall, this playground is a one-stop shop for crafting, assessing, and perfecting your AI-driven projects.
 
 ### Chat with your Data
 
@@ -205,9 +205,9 @@ AI Studio Project Playground serves as a streamlined arena where users can inter
 > [!IMPORTANT]  
 > Since this feature is in preview it might not work as expected
 
-Once your data is indexed, you can readily test its integration with LLMs through the AI Studio Playground. This interactive space provides a user-friendly interface to run queries against your data, observe how the LLM utilizes the indexed information, and refine the interaction experience. Here's how you can leverage the AI Studio Playground with your indexed datasets:
+Once your data is indexed, you can readily test its integration with LLMs through the AI Foundry Playground. This interactive space provides a user-friendly interface to run queries against your data, observe how the LLM utilizes the indexed information, and refine the interaction experience. Here's how you can leverage the AI Foundry Playground with your indexed datasets:
 
-To provide AI models with direct access to relevant data, Azure AI Studio allows you to index your own datasets. This will enable more sophisticated queries and generate richer, context-aware interactions. Follow the steps below to index your data within Azure AI Studio and put it to work using the AI models and Playground.
+To provide AI models with direct access to relevant data, Azure AI Foundry allows you to index your own datasets. This will enable more sophisticated queries and generate richer, context-aware interactions. Follow the steps below to index your data within Azure AI Foundry and put it to work using the AI models and Playground.
 
 #### Step-by-Step Process
 
@@ -215,21 +215,21 @@ To provide AI models with direct access to relevant data, Azure AI Studio allows
 
 2. **Deploy AI Models and Embeddings**: Before proceeding, ensure that your AI models and embeddings are deployed and operational within your Azure AI services. These models are essential as they process and derive meaning from your indexed data.
 
-3. **Connect to AI Studio Hub**: Access your Azure AI Studio Hub and establish a connection. This is your gateway to leveraging the capabilities provided by Azure AI Studio.
+3. **Connect to AI Foundry Hub**: Access your Azure AI Foundry Hub and establish a connection. This is your gateway to leveraging the capabilities provided by Azure AI Foundry.
 
 4. **Create a new AI Search Connection**: Create a new connection using EntraID in the section Connections and select AI Search.
 
-5. **Create a New Project**: Within the AI Studio Hub, initiate a new project which will serve as the container for your AI applications and data.
+5. **Create a New Project**: Within the AI Foundry Hub, initiate a new project which will serve as the container for your AI applications and data.
 
-6. **Add Data through the Chat Section**: Navigate to the 'Chat' section of your project, and click on the tab 'Add Your Data (Preview)'. You can now choose to upload a new file or select an existing file from Azure AI Studio to include in your data index. We recommend that you add data to your storage account separately by using the Azure Portal, going into your storage account, creating a new container, and then uploading the data there.
+6. **Add Data through the Chat Section**: Navigate to the 'Chat' section of your project, and click on the tab 'Add Your Data (Preview)'. You can now choose to upload a new file or select an existing file from Azure AI Foundry to include in your data index. We recommend that you add data to your storage account separately by using the Azure Portal, going into your storage account, creating a new container, and then uploading the data there.
 
-7. **Create a New Index**: After selecting or uploading your data, move forward by creating a new index. You'll be required to manually input essential information such as the Endpoint and API Key to proceed. This allows Azure AI Studio to interact with your data storage and indexing services.
+7. **Create a New Index**: After selecting or uploading your data, move forward by creating a new index. You'll be required to manually input essential information such as the Endpoint and API Key to proceed. This allows Azure AI Foundry to interact with your data storage and indexing services.
 
-8. **Index Creation Jobs**: Upon configuring your index, Azure AI Studio will initiate Azure Machine Learning workspace jobs to process and build the index. This step may take a while, depending on the size and complexity of your data.
+8. **Index Creation Jobs**: Upon configuring your index, Azure AI Foundry will initiate Azure Machine Learning workspace jobs to process and build the index. This step may take a while, depending on the size and complexity of your data.
 
-9. **Test and Query in the Playground**: With the index created, return to the AI Studio Playground. Here, you can start running queries, asking questions, and observing how your AI models utilize the newly indexed data to provide responses.
+9. **Test and Query in the Playground**: With the index created, return to the AI Foundry Playground. Here, you can start running queries, asking questions, and observing how your AI models utilize the newly indexed data to provide responses.
 
-By indexing your own data, you turn the Playground into a powerful tool not just for testing generic AI capabilities but for validating and improving your specific AI-driven applications. The integrated environment of Azure AI Studio simplifies this process, allowing you to focus on crafting the most engaging and intelligent experiences based on your unique datasets.
+By indexing your own data, you turn the Playground into a powerful tool not just for testing generic AI capabilities but for validating and improving your specific AI-driven applications. The integrated environment of Azure AI Foundry simplifies this process, allowing you to focus on crafting the most engaging and intelligent experiences based on your unique datasets.
 
 ## Assistants
 
@@ -243,23 +243,23 @@ You can test this feature by clicking assistants where you can use the tools pro
 
 ### Authoring a flow
 
-The authoring architecture diagram illustrates how flow authors [connect to an Azure AI Studio through a private endpoint](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-private-link?tabs=azure-portal) in a virtual network. In this case, the author connects to the virtual network through Azure Bastion and a virtual machine jumpbox. Connectivity to the virtual network is more commonly done in enterprises through ExpressRoute or virtual network peering.
+The authoring architecture diagram illustrates how flow authors [connect to an Azure AI Foundry through a private endpoint](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-private-link?tabs=azure-portal) in a virtual network. In this case, the author connects to the virtual network through Azure Bastion and a virtual machine jumpbox. Connectivity to the virtual network is more commonly done in enterprises through ExpressRoute or virtual network peering.
 
-The diagram further illustrates how Azure AI Studio is configured for [Managed virtual network isolation](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-managed-network). With this configuration, a managed virtual network is created, along with managed private endpoints enabling connectivity to private resources such as the workplace Azure Storage and Azure Container Registry. You can also create user-defined connections like private endpoints to connect to resources like Azure OpenAI Service and Azure AI Search (previously named Cognitive Search). Differently from Azure Machine Learning, AI Studio doesn't support bringing your own vnet.
+The diagram further illustrates how Azure AI Foundry is configured for [Managed virtual network isolation](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-managed-network). With this configuration, a managed virtual network is created, along with managed private endpoints enabling connectivity to private resources such as the workplace Azure Storage and Azure Container Registry. You can also create user-defined connections like private endpoints to connect to resources like Azure OpenAI Service and Azure AI Search (previously named Cognitive Search). Differently from Azure Machine Learning, AI Foundry doesn't support bringing your own vnet.
 
-### Deploying a flow to Azure AI Studio managed online endpoint
+### Deploying a flow to Azure AI Foundry managed online endpoint
 
-![Diagram of deploying a flow to Azure AI Studio managed online endpoint.](docs/media/aistudio-e2e-deployment-appservices.png)
+![Diagram of deploying a flow to Azure AI Foundry managed online endpoint.](docs/media/aistudio-e2e-deployment-appservices.png)
 
-The Azure AI Studio deployment architecture diagram illustrates how a front-end web application, deployed into a [network-secured App Service](https://github.com/Azure-Samples/app-service-baseline-implementation), [connects to a managed online endpoint through a private endpoint](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-private-link?tabs=azure-portal) in a virtual network. Like the authoring flow, the diagram illustrates how the Azure AI Studio is configured for [Workspace managed virtual network isolation](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-managed-network). The deployed flow is able to connect to required resources such as Azure OpenAI and AI Search through managed private endpoints.
+The Azure AI Foundry deployment architecture diagram illustrates how a front-end web application, deployed into a [network-secured App Service](https://github.com/Azure-Samples/app-service-baseline-implementation), [connects to a managed online endpoint through a private endpoint](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-private-link?tabs=azure-portal) in a virtual network. Like the authoring flow, the diagram illustrates how the Azure AI Foundry is configured for [Workspace managed virtual network isolation](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/configure-managed-network). The deployed flow is able to connect to required resources such as Azure OpenAI and AI Search through managed private endpoints.
 
 ### Deploying a flow to Azure App Service (alternative)
 
 ![Diagram of deploying a flow to Azure App Service.](docs/media/aistudio-e2e-deployment-appservices.png)
 
-The Azure App Service deployment architecture diagram illustrates how the same prompt flow can be containerized and deployed to Azure App Service alongside the same front-end web application from the prior architecture. This solution is a completely self-hosted, externalized alternative to an Azure AI Studio managed online endpoint.
+The Azure App Service deployment architecture diagram illustrates how the same prompt flow can be containerized and deployed to Azure App Service alongside the same front-end web application from the prior architecture. This solution is a completely self-hosted, externalized alternative to an Azure AI Foundry managed online endpoint.
 
-The flow is still authored in a network-isolated Azure AI Studio. To deploy in App Service in this architecture, the flows need to be containerized and pushed to the Azure Container Registry that is accessible through private endpoints to the App Service.
+The flow is still authored in a network-isolated Azure AI Foundry. To deploy in App Service in this architecture, the flows need to be containerized and pushed to the Azure Container Registry that is accessible through private endpoints to the App Service.
 
 ### Create, test, and deploy a Prompt flow
 
@@ -267,7 +267,7 @@ The flow is still authored in a network-isolated Azure AI Studio. To deploy in A
 
 1. Connect to the virtual network via Azure Bastion and the jump box (deployed as part of this solution) or through a force-tunneled VPN or virtual network peering that you manually configure.
 
-2. Open the [Azure AI Studio](https://ml.azure.com/) and choose your workspace. Ensure you have [enabled Prompt flow in your Azure AI Studio](https://learn.microsoft.com/azure/machine-learning/prompt-flow/get-started-prompt-flow?view=azureml-api-2#prerequisites-enable-prompt-flow-in-your-azure-machine-learning-workspace).
+2. Open the [Azure AI Foundry](https://ml.azure.com/) and choose your workspace. Ensure you have [enabled Prompt flow in your Azure AI Foundry](https://learn.microsoft.com/azure/machine-learning/prompt-flow/get-started-prompt-flow?view=azureml-api-2#prerequisites-enable-prompt-flow-in-your-azure-machine-learning-workspace).
 
 3. Create a prompt flow connection to your Azure OpenAI deployment. This will be used by the prompt flow you clone in the next step.
     - Click on 'Prompt flow' in the left navigation in Machine Learning Studio
@@ -307,7 +307,7 @@ The flow is still authored in a network-isolated Azure AI Studio. To deploy in A
    - Enter a question
    - The response should echo your question with 'Echo' appended
 
-### Deploy to Azure AI Studio managed online endpoint
+### Deploy to Azure AI Foundry managed online endpoint
 
 1. Create a deployment in the UI
 
@@ -405,7 +405,7 @@ This section will help you validate that the workload is exposed correctly and r
 This is a second option for deploying the flow. With this option, you deploy the flow to Azure App Service instead of the managed online endpoint. At a high level, you must do the following:
 
 - Prerequisites - Ensure you have the prerequisites
-- Download your flow - Download the flow from the Azure AI Studio
+- Download your flow - Download the flow from the Azure AI Foundry
 - Build the flow - Use the `pf` CLI to build your flow
 - Build and push the image - Containerize the flow and push to your Azure Container Registry
 - Publish the image to Azure App Service
@@ -433,11 +433,11 @@ pip install bs4
 
 ### Download your flow
 
-1. Open the Prompt flow UI in Azure AI Studio Studio
+1. Open the Prompt flow UI in Azure AI Foundry Studio
 2. Expand the 'Files' tab in the right pane of the UI
 3. Click on the download icon to download the flow as a zip file
 
-> :bulb: If you are using a jumpbox to connect to Azure AI Studio, when you download the flow, it will be downloaded to your jumpbox. You will either need to have the prerequisites installed on the jumpbox, or you will need to transfer the zip file to a system that has the prerequisites.
+> :bulb: If you are using a jumpbox to connect to Azure AI Foundry, when you download the flow, it will be downloaded to your jumpbox. You will either need to have the prerequisites installed on the jumpbox, or you will need to transfer the zip file to a system that has the prerequisites.
 
 ### Build the flow
 
@@ -538,5 +538,5 @@ az keyvault purge -n kv-${BASE_NAME}
 
 ## Next steps
 
-You can check the detailed deep dive of AI Studio security model [here](SECURITY_DEEP_DIVE.md).
+You can check the detailed deep dive of AI Foundry security model [here](SECURITY_DEEP_DIVE.md).
 
