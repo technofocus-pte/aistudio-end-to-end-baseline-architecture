@@ -6,10 +6,10 @@
       "value": ""
     },
     "appGatewayListenerCertificate": {
-      "value": ""
+      "value": "[base64 cert data from $APP_GATEWAY_LISTENER_CERTIFICATE_APPSERV_BASELINE]"
     },
     "jumpBoxAdminPassword": {
-      "value": ""
+      "value": "jmPSecureST98"
     },
     "developmentEnvironment": {
       "value": true
@@ -18,7 +18,7 @@
       "value": ""
     },
     "deploySharedPrivateLink": {
-      "value": false
+      "value": true
     }
   }
 }
