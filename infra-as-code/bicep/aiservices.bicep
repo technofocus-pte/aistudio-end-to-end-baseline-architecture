@@ -23,8 +23,8 @@ param disableLocalAuth bool = false
 @description('Specifies the OpenAI deployments to create.')
 param deployments array = [
   {
-    name: 'gpt-4'
-    version: '1106-Preview'
+    name: 'gpt-4o'
+    version: '2024-11-20'
     raiPolicyName: ''
     capacity: 10
     sku: 'Standard'
@@ -56,7 +56,6 @@ resource aiServices 'Microsoft.CognitiveServices/accounts@2024-04-01-preview' = 
     publicNetworkAccess: 'disabled'
     disableLocalAuth: disableLocalAuth
     apiProperties: {
-      statisticsEnabled: false
     }
     networkAcls: {
       bypass: 'AzureServices'
