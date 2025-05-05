@@ -338,7 +338,7 @@ resource jumpBoxVirtualMachine 'Microsoft.Compute/virtualMachines@2023-07-01' = 
 
 @description('Associate jump box with Azure Monitor Agent VM Insights DCR.')
 resource jumpBoxDcrAssociation 'Microsoft.Insights/dataCollectionRuleAssociations@2022-06-01' = {
-  name: 'dcra-vminsights'
+  name: 'dcravminsights'
   scope: jumpBoxVirtualMachine
   properties: {
     dataCollectionRuleId: virtualMachineInsightsDcr.id
